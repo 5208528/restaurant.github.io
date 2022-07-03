@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    <span style="font-size:32px;color:red">寵物用品店</span>
+    @if(ViewBag.Account==null)
+    {
+    @Html.ActionLink("登入/註冊", "LeaveHome", new { @style="font-size:16px;color:blue"})
+    }
+    else
+    {
+        @ViewBag.Account<span>登入</span>
+        @Html.ActionLink("登出","Logout")
+    }
+    @Html.ActionLink("回首頁","Index", new { @style = "font-size:16px;color:blue" })
+        @RenderBody()
+       <h6>版權所有，抄襲必究</h6>
+</body>
+</html>
