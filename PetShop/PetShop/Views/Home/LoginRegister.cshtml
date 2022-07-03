@@ -1,0 +1,19 @@
+﻿@if (TempData["Choice"].ToString() == "One")
+{
+    <h2>登入區</h2>
+    <h3 style="color:red">@ViewBag.Msg</h3>
+    using (Html.BeginForm("CheckIn", "Home"))
+    {
+        @Html.TextBox("UserName", "信箱", new { style = "Color:lightgray;WWidth:200px" })
+        <br />
+        @Html.TextBox("Password", "密碼", new { style = "Color:lightgray;WWidth:100px" })
+        <br />
+        <input type="submit" value="登入" />
+        @Html.ActionLink("還沒註冊？", "GoTwo", "Home", new { style = "font-size:small" });
+    }
+}
+else
+{
+    <h2>註冊區</h2>
+    @Html.ActionLink("要登入嗎？", "GoOne", "Home", new { style = "font-size:small" });
+}
